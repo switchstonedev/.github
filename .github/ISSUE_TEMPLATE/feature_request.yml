@@ -1,41 +1,46 @@
-name: Feature Request
-description: Propose a new capability, performance improvement, or benchmark workload
-title: "[Feature]: "
+name: Enhancement Request
+description: Request an enhancement or new capability for the project
 labels: ["enhancement", "triage"]
+assignees: []
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for proposing an enhancement to SwitchStone tooling and systems.
+        Thanks for taking the time to share your feedback on ways SwitchStone can be improved!
   - type: textarea
-    id: problem
+    id: description
     attributes:
-      label: Problem Statement
-      description: Is this feature request related to a specific limitation or pain point?
-      placeholder: A clear and concise description of the limitation or problem.
+      label: Describe the enhancement requested
+      description: A clear and concise description of the new feature, performance improvement, or benchmark workload.
+      placeholder: Describe the problem and the proposed enhancement.
     validations:
       required: true
   - type: textarea
-    id: solution
+    id: rationale
     attributes:
-      label: Proposed Solution
-      description: Describe the solution or workflow you would like to see implemented.
-      placeholder: A clear and concise description of what you want to happen.
+      label: Rationale & Use Cases
+      description: Why should this be added to SwitchStone? What use cases or workloads does it support?
+      placeholder: Explain the motivation and advantages over existing solutions.
+    validations:
+      required: false
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component(s)
+      description: Select the SwitchStone component(s) relevant to this enhancement request.
+      multiple: true
+      options:
+        - Benchmarking Engine
+        - Vector DB Benchmark
+        - CP Recommendation Engine
+        - Developer Tools
+        - Algorithms / Data Structures
+        - Documentation
+        - Continuous Integration / Build
+        - C++
+        - Python
+        - Rust
+        - Go
+        - Other
     validations:
       required: true
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternatives Considered
-      description: Describe any alternative solutions, trade-offs, or workarounds you considered.
-      placeholder: Alternative approaches or libraries evaluated.
-    validations:
-      required: false
-  - type: textarea
-    id: context
-    attributes:
-      label: Additional Context
-      description: Add any relevant architectural diagrams, benchmark targets, or references.
-      placeholder: Links, citations, or sample schemas.
-    validations:
-      required: false

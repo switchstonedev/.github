@@ -1,49 +1,50 @@
 name: Bug Report
-description: Report unexpected behavior, crashes, or incorrect benchmark outputs
-title: "[Bug]: "
+description: File a bug report
 labels: ["bug", "triage"]
+assignees: []
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thank you for reporting an issue. Please search existing open and closed issues before submitting to avoid duplicates.
   - type: textarea
     id: description
     attributes:
-      label: Description
-      description: A clear and concise description of the bug.
-      placeholder: Describe the problem encountered.
+      label: Describe the bug, including details regarding any error messages, version, and platform.
+      description: Please include what you expected vs. what actually occurred.
+      placeholder: |
+        - Description:
+        - Version / Commit hash:
+        - Platform / OS:
+        - Expected behavior:
     validations:
       required: true
   - type: textarea
     id: reproduction
     attributes:
-      label: Steps to Reproduce
-      description: Provide minimal, reproducible steps or code to trigger the behavior.
+      label: Steps to Reproduce & Minimal Example
+      description: Provide minimal, reproducible steps, code snippet, or dataset configuration to trigger the behavior.
       placeholder: |
         1. Run command '...'
-        2. With configuration '...'
-        3. See error
+        2. With configuration / dataset '...'
+        3. See error or unexpected output
     validations:
       required: true
-  - type: textarea
-    id: expected-actual
+  - type: dropdown
+    id: component
     attributes:
-      label: Expected vs. Actual Behavior
-      description: What did you expect to happen, and what happened instead?
-      placeholder: Expected ... but received ...
-    validations:
-      required: true
-  - type: textarea
-    id: environment
-    attributes:
-      label: Environment Details
-      description: Relevant OS, runtime/compiler version, hardware, and dataset size details where applicable.
-      placeholder: |
-        - OS: (e.g., Ubuntu 24.04, macOS 14, Windows 11)
-        - Runtime / Compiler: (e.g., Python 3.12, Rust 1.80, Go 1.23)
-        - Hardware: (e.g., CPU, RAM, GPU if applicable)
-        - Dataset / Input Size: (e.g., 100k vectors, 128-dim)
+      label: Component(s)
+      description: Select the SwitchStone component(s) relevant to this bug report.
+      multiple: true
+      options:
+        - Benchmarking Engine
+        - Vector DB Benchmark
+        - CP Recommendation Engine
+        - Developer Tools
+        - Algorithms / Data Structures
+        - Documentation
+        - Continuous Integration / Build
+        - C++
+        - Python
+        - Rust
+        - Go
+        - Other
     validations:
       required: true
   - type: textarea
@@ -60,7 +61,7 @@ body:
     attributes:
       label: Pre-submission Checklist
       options:
-        - label: I have searched existing issues and verified this is not a duplicate report.
+        - label: I have searched existing issues and verified this is not a duplicate.
           required: true
         - label: I have verified this behavior on the latest release or main branch.
           required: false
